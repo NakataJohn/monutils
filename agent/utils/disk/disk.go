@@ -1,8 +1,6 @@
 package disk
 
 import (
-	"fmt"
-
 	"github.com/shirou/gopsutil/disk"
 )
 
@@ -14,7 +12,6 @@ type DiskInfo struct {
 
 func GetDisk() (disksInfo []DiskInfo) {
 	devs, _ := disk.Partitions(true)
-	fmt.Println("#磁盘使用情况：")
 	for _, d := range devs {
 		mp := d.Mountpoint
 		fs := d.Fstype
