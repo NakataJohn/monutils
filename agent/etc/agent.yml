@@ -1,0 +1,18 @@
+agent:
+  name: "test"
+
+server:
+  host: 192.168.145.199:8765
+
+heartbeat:
+  retry: 5
+  timeout: 30
+
+monitor:
+  # eg:10s;3m;1h
+  interval: 30s
+  # include默认是所有：[cpu,disk,mem,host,load,net]。
+  include: ["host", "cpu", "mem", "disk", "load"]
+  exclude: ["net", "cpu", "disk"]
+
+log_dir: "./logs"
