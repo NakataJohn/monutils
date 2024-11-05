@@ -60,7 +60,7 @@ func Monitor(opt string, monstat *domain.MonStat) {
 
 func GetMonitorOpts(cfg *config.Conf) []interface{} {
 	monset := mapset.NewSet()
-	include := cfg.Viper.GetStringSlice("moniotr.include")
+	include := cfg.Viper.GetStringSlice("monitor.include")
 	if len(include) == 0 {
 		monset.Add("host")
 		monset.Add("load")
